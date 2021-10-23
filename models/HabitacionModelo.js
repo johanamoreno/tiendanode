@@ -13,11 +13,11 @@ const HabitacionModelo=Schema({
         require:true
     },
     precioadulto:{
-        type:String,
+        type:Number,
         require:true
     },
-    precioniño:{
-        type:String,
+    precionino:{
+        type:Number,
         require:true
     }
 })

@@ -4,7 +4,7 @@ const {insertarHabitacion}=require('../services/serviciosHabitacion.js')
 async function registrarHabitacion(peticion=request,respuesta=response){
 
     let datosCliente=peticion.body;
-
+    
     try{
 
         await insertarHabitacion(datosCliente)
