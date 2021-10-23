@@ -16,16 +16,16 @@ const {eliminarHabitacion}=require('../controllers/controladorhabitacion.js')
 
 const rutas=Router()
 
-rutas.get('/avanzada/v1/reserva/id', buscarReserva) 
+rutas.get('/avanzada/v1/reserva/:id', buscarReserva) 
 rutas.get('/avanzada/v1/reserva', buscarReservas)       
 rutas.post('/avanzada/v1/reserva', registrarReserva)  
-rutas.put('/avanzada/v1/reserva/id', editarReserva)  
-rutas.delete('/avanzada/v1/reserva/id', eliminarReserva)
+rutas.put('/avanzada/v1/reserva/:id', editarReserva)  
+rutas.delete('/avanzada/v1/reserva/:id', eliminarReserva)
 
-rutas.get('/avanzada/v1/habitacion/id', buscarHabitacion) 
+rutas.get('/avanzada/v1/habitacion/:id', buscarHabitacion) 
 rutas.get('/avanzada/v1/habitacion', buscarHabitaciones)       
 rutas.post('/avanzada/v1/habitacion', registrarHabitacion)  
-rutas.put('/avanzada/v1/habitacion/id', editarHabitacion)  
-rutas.delete('/avanzada/v1/habitacion/id', eliminarHabitacion)
+rutas.put('/avanzada/v1/habitacion/:id', editarHabitacion)  
+rutas.delete('/avanzada/v1/habitacion/:id', eliminarHabitacion)
 
 module.exports=rutas

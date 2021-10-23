@@ -1,13 +1,25 @@
 const {request, response}=require('express')
+const {insertarHabitacion}=require('../services/serviciosHabitacion.js')
 
-function registrarHabitacion(peticion=request,respuesta=response){
+async function registrarHabitacion(peticion=request,respuesta=response){
 
-    respuesta.json(
-        {
+    let datosCliente=peticion.body;
+
+    try{
+
+        await insertarHabitacion(datosCliente)
+        respuesta.status(200).json({
             estado:true,
-            mensaje:"estoy registrando una habitacion"
-        }
-    )
+            mensaje:"Habitacion registrada con exito"
+        })
+
+    }catch(error){
+        respuesta.status(400).json({
+            estado:false,
+            mensaje:"Error registrando habitacion"+error
+        })
+
+    }
 }
 
 function buscarHabitacion(peticion=request,respuesta=response){
